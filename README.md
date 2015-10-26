@@ -26,3 +26,4 @@ This tool will NOT accurately translate:
 
 I offer the source code up to anyone interested in helping make enhancements to this tool in order to develop a more robust utility for the VBA community.
 
+See working tool here:  http://www.datapigtechnologies.com/VBAToJS/VBAToJavaScriptTranslator.html
