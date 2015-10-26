@@ -2,7 +2,8 @@
 var strs=[];
 
 function vbsTojs(vbs){
-    	
+
+	
     var s = vbs;
     var Vars = '';
     var Fx = '';
@@ -115,9 +116,13 @@ function vbsTojs(vbs){
 	
             //ELSE and ELSEIF
         }else if(a[i].search(/^ELSE/i)>-1){
-            a[i] = "}else{";
+            a[i] = a[i].replace(/^ELSE/i, "}else{");
+            a[i] = a[i].replace(/=/g, "==").replace(/<>/g, "!=");
+            a[i] = a[i].replace(/\bOR\b/gi, "||").replace(/\bAND\b/gi, "&&");
         } else if (a[i].search(/^ELSEIF/i) > -1) {
-            a[i] = "}else if{";
+            a[i] = a[i].replace(/^ELSEIF/i, "}else if{");
+            a[i] = a[i].replace(/=/g, "==").replace(/<>/g, "!=");
+            a[i] = a[i].replace(/\bOR\b/gi, "||").replace(/\bAND\b/gi, "&&");
 
             //END IF
         }else if(a[i].search(/^END\s*IF/i)>-1){
@@ -180,7 +185,8 @@ function vbsTojs(vbs){
             a[i] = a[i].replace(/(\s+)AND(\s+)/i, "$1&&$2");
         } else if (a[i].search(/(\s+)OR(\s+)/i) > -1) {
             a[i] = a[i].replace(/(\s+)OR(\s+)/i, "$1||$2");
-
+        } else if (a[i].search(/=/i) > -1) {
+            a[i] = a[i].replace(/=/i, "==");
         
             //OPTION EXPLICIT AND CONsT
         } else if (a[i].search(/^CONST/i) > -1) {
