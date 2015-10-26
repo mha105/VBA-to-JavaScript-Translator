@@ -185,10 +185,9 @@ function vbsTojs(vbs){
             a[i] = a[i].replace(/(\s+)AND(\s+)/i, "$1&&$2");
         } else if (a[i].search(/(\s+)OR(\s+)/i) > -1) {
             a[i] = a[i].replace(/(\s+)OR(\s+)/i, "$1||$2");
-        } else if (a[i].search(/=/i) > -1) {
-            a[i] = a[i].replace(/=/i, "==");
         
-            //OPTION EXPLICIT AND CONsT
+        
+            //OPTION EXPLICIT AND CONST
         } else if (a[i].search(/^CONST/i) > -1) {
             a[i] = a[i].replace(/^CONST/i,"const");
         } else if (a[i].search(/^Option\\s+Explicit.*[\r\n]/i) > -1) {
