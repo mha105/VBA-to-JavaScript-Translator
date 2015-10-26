@@ -11,12 +11,12 @@ The idea is to enter a basic block of VBA code (be sure to include your Function
 Currently, this translator works with:
 * Both Functions and Sub Procedures
 * Variable Declarations
-* Basic If Then Statements
-* Select Case Statements
+* Basic IF THEN Statements
+* SELECT CASE Statements
 * Most Comparison Operators
-* Basic For x TO y Loops
-* Most variations of Do Loops
-* Basic MsgBox calls
+* Basic FOR x TO y Loops
+* Most variations of DO LOOPS
+* Basic MSGBOX calls
 
 
 Known Issues:
