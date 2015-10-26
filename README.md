@@ -14,15 +14,16 @@ Currently, this translator works with:
 * Basic If Then Statements
 * Select Case Statements
 * Most Comparison Operators
-* For Each Loops
+* Basic For x TO y Loops
 * Most variations of Do Loops
 * Basic MsgBox calls
 
-This tool currently does NOT accurately translate:
-*  Built in VBA functions
-*  References to Office Objects
-*  For Each loops that use STEP constructs
-*  With Statements
+Known Issues:
+This tool currently does NOT accurately translate
+    *  Built in VBA functions
+    *  References to Office Objects
+    *  With Statements
+For Each Loops causes the tool bring back nothing.  I'm still working out why that is. 
 
 I offer the source code up to anyone interested in helping make enhancements to this tool in order to develop a more robust utility for the VBA community.
 
