@@ -1,8 +1,7 @@
 # VBA-to-JavaScript-Translator
 This translator is intended to be used as an educational tool to help VBA developers get familiar with JavaScript. 
 
-The code for this tool is based on regex examples found from multiple sources in forums and online.  Sorry to say...I don't have the information needed to directly credit all the sources I leverageed.
-However a thank you goes to the folks at Slingfive.com for the inspiration
+The code for this tool is based on regex examples found from multiple sources in forums and online.  Sorry to say...I did not keep a record of all the sources I leveraged.  Just know that people smarter that I am provided the basis for most of the code found here.  I simply adjusted what I needed and slapped it all together into a single utility.
 
 As with most translation tools, this tool will NOT perform a 100% complete translation. 
 It is designed to cover the most used constructs in VBA (enough to get you started). 
@@ -25,5 +24,5 @@ This tool will NOT accurately translate:
 *  References to Excel Objects
 *  For Each loops that use STEP constructs
 
-I offer the source code up to anyone interested in helping makes this tool a more robust utility for the VBA community.
+I offer the source code up to anyone interested in helping make enhancements to this tool in order to develop a more robust utility for the VBA community.
 
