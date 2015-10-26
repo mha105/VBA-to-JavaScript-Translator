@@ -19,6 +19,7 @@ Currently, this translator works with:
 * Basic MsgBox calls
 
 Known Issues:
+
 This tool currently does NOT accurately translate
     *  Built in VBA functions
     *  References to Office Objects
