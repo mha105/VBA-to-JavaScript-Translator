@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>VBA to JavaScript Translation Tool</title>
+    <link href="Content/Office.css" rel="stylesheet" type="text/css" />
+    <link href="App.css" rel="stylesheet" type="text/css" />
+    <link href="Home.css" rel="stylesheet" type="text/css" />
+    <script src="vb2js.js" type="text/javascript"></script>
+    <script src="jquery-1.9.1.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="content-main">
+        <div class="padding">
+        </div>
+
+        <center>
+            <p>
+                This translator is intended to be used as an educational tool to help VBA developers get familiar with JavaScript.
+                <br />
+                This tool will NOT perform a 100% complete translation.  It is designed to cover the most used constructs in VBA (enough to get you started).
+                <br />
+                Start by entering or pasting a basic block of VBA code (<b>be sure to include your Function/Sub wrappers</b>).
+                <br />
+                Review how that code looks in JavaScript.  Next, try increasingly more advanced code examples (loops, if statements, etc.).
+                <br />
+                Happy Learning!  -Mike Alexander <a href="http://www.datapigtechnologies.com/blog">datapigtechnologies.com</a>
+            </p>
+            <p><b>VBA</b></p>
+            <p>
+                <textarea rows="12" id="vbs" cols="70">
+Function TestVBA(A as integer)
+DIM B as integer
+B = 5
+For A = 1  to 10
+A*B
+Next A
+If B <>50  or B = A then
+MsgBox "Test Message"
+else
+B = 20
+end if
+End function
+                </textarea>
+            </p>
+            <p><input type="button" value="Convert" id="btn"></p>
+            <p>&nbsp;</p>
+            <p><b>JavaScript</b></p>
+            <p>
+                <textarea rows="12" id="js" cols="70"></textarea>
+            </p>
+
+        </center>
+
+        <script>
+            var vbs = document.getElementById("vbs");
+            var js = document.getElementById("js");
+            $('#btn').click(doIt);
+
+
+            function doIt() {
+                if (vbs.value.length < 1) {
+                    vbs.value = "Please enter or paste a sub or function here first";
+                } else {
+                    js.value = vbsTojs(vbs.value);
+                };
+            }
+        </script>
+
+
+
+
+    </div>
+</body>
+</html>
