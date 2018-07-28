@@ -92,9 +92,19 @@ function vbsTojs(vbs){
             a[i]=a[i].replace(counter,"").replace(from,"").replace(/\bTO\b/i,"");
             to = a[i].match(/\s*[\w\(\)]+\s*/)[0];
             to=to.replace(/=/,"").replace(/\s+/g,"");
-            a[i] = "for(" + counter + "=" + from + "; " + counter + "<=" + to + "; " + counter + "++){"
+            // stepsize
+            if(a[i].search(/\bSTEP\b\s+/i)==-1) a[i] = a[i] + " STEP 1";
+            steps = a[i].match(/\bSTEP\b\s*(-?)([*+-\/\s\w\(\)]*)$/i);
+            steps[1] = steps[1].replace(/\s*/g,"")=="" ? "+" : "-";
+            cmpop = (steps[1] == "+") ? "<=" : ">=";
+            if (steps[2] == "1") {
+              stepsize = counter + steps[1] + steps[1];
+            }else{
+              stepsize = (counter + " = " + counter + " " + steps[1] + " " + steps[2]).replace(/\s*/g," ");
+            }
+            
+            a[i] = "for(" + counter + "=" + from + "; " + counter + cmpop + to + "; " + stepsize + "){";
 	
-
             //NEXT
         }else if(a[i].search(/^NEXT\b/i)>-1){
             a[i] = "}";

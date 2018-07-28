@@ -14,7 +14,7 @@ Currently, this translator works with:
 * Basic IF THEN Statements
 * SELECT CASE Statements
 * Most Comparison Operators
-* Basic FOR x TO y Loops
+* Basic FOR x TO y STEP z Loops
 * Most variations of DO LOOPS
 * Basic MSGBOX calls
 
@@ -24,7 +24,6 @@ This tool currently does NOT accurately translate
 *  Built in VBA functions
 *  References to Office Objects
 *  WITH Statements
-*  STEP Constructs in FOR Loops
 *  FOR EACH Loops (in fact these cause the tool to return nothing at all.  I'm still working out why that is) 
 
 I offer the source code up to anyone interested in helping make enhancements to this tool in order to develop a more robust utility for the VBA community.
