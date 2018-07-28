@@ -95,12 +95,12 @@ function vbsTojs(vbs){
             // stepsize
             if(a[i].search(/\bSTEP\b\s+/i)==-1) a[i] = a[i] + " STEP 1";
             steps = a[i].match(/\bSTEP\b\s*(-?)([*+-\/\s\w\(\)]*)$/i);
-            steps[1] = steps[1].replace(/\s{2,}/g,"")=="" ? "+" : "-";
+            steps[1] = steps[1].replace(/\s*/g,"")=="" ? "+" : "-";
             cmpop = (steps[1] == "+") ? "<=" : ">=";
             if (steps[2] == "1") {
               stepsize = counter + steps[1] + steps[1];
             }else{
-              stepsize = (counter + " = " + counter + " " + steps[1] + " " + steps[2]).replace(/\s{2,}/g," ");
+              stepsize = (counter + " = " + counter + " " + steps[1] + " " + steps[2]).replace(/\s*/g," ");
             }
             
             a[i] = "for(" + counter + "=" + from + "; " + counter + cmpop + to + "; " + stepsize + "){";
